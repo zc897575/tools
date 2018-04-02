@@ -1,0 +1,200 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+@import "variables";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input {
+    margin: 0;
+    padding: 0;
+    font-weight: inherit;
+    border: 0;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+caption,
+td,
+th {
+    vertical-align: middle;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: $font-family;
+    border-radius: 0; //ios
+    box-shadow: none;
+    outline: 0;
+    color: inherit; /* 1 */
+    margin: 0; /* 3 */
+    line-height: 1.42;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+    display: inline-block;
+    border: 0;
+    background: none;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -.5em;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+img {
+    border: 0; /* 1 */
+    vertical-align: middle; /* 0 */
+}
+
+li {
+    list-style: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+::-webkit-input-placeholder {
+    color: #ababab;
+}
+
+::placeholder {
+    color: #ababab;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, .2);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 10px;
+    background-color: rgba(125, 125, 125, .7);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 10px;
+    background-color: rgba(125, 125, 125, .7);
+    -webkit-border-radius: 6px;
+}
+
+button:disabled {
+    background-color: #aaa !important;
+    color: #fff !important;
+
+    &:before {
+        border-color: #aaa !important;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+strong {
+    font-weight: 700;
+}
+
+img[src=""] {
+    visibility: hidden;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+    font: 500 $m-font $font-family;
+    line-height: 1.42857143;
+    background: $body-bg;
+    color: $text-color;
+    -webkit-touch-callout: none;
+}

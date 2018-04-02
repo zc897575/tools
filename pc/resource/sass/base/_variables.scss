@@ -1,0 +1,29 @@
+$version:                   201606121 !default;
+
+/* bg color */
+$body-bg: #f5f5f5 !default;
+
+/* font-family */
+$font-family: -apple-system-font, "Helvetica Neue", sans-serif, 'Microsoft YaHei';
+
+/* color */
+$main-color: #eaa73f !default; // 网站主色调
+$jump-color: #f50 !default; // 网站点缀颜色
+$text-color: #333 !default; // 正文颜色
+$light-color: #999 !default; // 提示文字颜色
+$line-color: #eee !default; // 分割线颜色
+
+/* font-size */
+$s-font: 12px !default;
+$m-font: 14px !default; // 正文字体
+$l-font: 16px !default;
+$xl-font: 18px !default;
+$xxl-font: 20px !default;
+$xxxl-font: 24px !default;
+$xxxxl-font: 26px !default;
+$xxxxxl-font: 28px !default;
+
+/* layout */
+$min-width: 1200px !default; // 页面最小宽度
+$max-width: 1920px !default; // 页面最大宽度
+

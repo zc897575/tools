@@ -1,0 +1,194 @@
+@import "./base";
+@import "common/normalize";
+@import "common/reset";
+
+html {
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100%;
+}
+
+#app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: $max-width;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $text-color;
+
+    &:active,
+    &:hover {
+        outline: 0;
+    }
+}
+
+.main-body {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform ease-in-out .38s, visibility .38s;
+}
+
+.router-view {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.router-opacity {
+    opacity: 1;
+}
+
+.vux-pop-reverse-enter-active,
+.vux-pop-reverse-leave-active,
+.vux-pop-forward-enter-active,
+.vux-pop-forward-leave-active {
+    will-change: transform;
+    transition: opacify 100ms, transform 500ms;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+$leave-opacity: 0;
+
+.vux-pop-reverse-enter {
+    opacity: $leave-opacity;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.vux-pop-reverse-leave-active {
+    opacity: 1;
+    transform: translate3d(100%, 0, 0);
+}
+
+.vux-pop-forward-enter {
+    opacity: 1;
+    transform: translate3d(100%, 0, 0);
+}
+
+.vux-pop-forward-leave-active {
+    opacity: $leave-opacity;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.tap-active:active {
+    background-color: #f1f1f1;
+}
+
+.bscroll-vertical-scrollbar {
+    width: 2px !important;
+}
+
+.bscroll-indicator {
+    background-color: rgba(0, 0, 0, .2) !important;
+    border: 0 !important;
+}
+
+/* vux样式修改 */
+.weui-dialog {
+    border-radius: 10px !important;
+    max-width: 600px !important;
+}
+
+.weui-toast {
+    padding: 10px 6px;
+    min-width: 60%;
+    white-space: nowrap;
+    width: auto !important;
+}
+
+.weui-toast.vux-toast-top {
+    top: 20px !important;
+}
+
+.weui-toast.vux-toast-middle {
+    margin-top: -60px;
+}
+
+.weui-toast__content {
+    font-size: .28rem !important;
+}
+
+.vux-loading {
+    .weui-toast {
+        background: rgba(255, 255, 255, .1);
+        color: #333;
+    }
+}
+
+.vux-table td:before,
+.vux-table th:before {
+    border-color: #dedede !important;
+}
+
+.vux-table {
+    transform: translateZ(0);
+}
+
+.vux-slider > .vux-swiper > .vux-swiper-item > a > .vux-swiper-desc {
+    display: none;
+}
+
+/* common */
+@each $item in 5, 10, 15, 20 {
+    .mr-top#{$item} {
+        margin-top: #{$item}px;
+    }
+
+    .mr-left#{$item} {
+        margin-left: #{$item}px;
+    }
+}
+
+.lazyload {
+    opacity: .2;
+    transition: opacity .5s;
+    transform: translateZ(0);
+}
+
+img[lazy=loaded],
+img[lazy=error] {
+    opacity: 1;
+}
+
+img[src=""] {
+    opacity: 0;
+}
+
+.point {
+    color: $main-color;
+}
+
+.long-btn {
+    display: block;
+    width: 90%;
+    height: .8rem;
+    margin: 0 auto;
+    line-height: .8rem;
+    text-align: center;
+    font-size: .32rem;
+    background: $main-color;
+    color: #fff;
+    border-radius: 4px;
+
+    &:active {
+        background: $btn-hover;
+    }
+}

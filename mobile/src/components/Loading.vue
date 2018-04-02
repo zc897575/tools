@@ -1,0 +1,200 @@
+<template>
+	<div class="loading" v-show="show" :style="fixed ? 'position: fixed' : ''">
+		<div class="spinners">
+			<div class="spinner-container container1">
+				<div class="circle1"></div>
+				<div class="circle2"></div>
+				<div class="circle3"></div>
+				<div class="circle4"></div>
+			</div>
+			<div class="spinner-container container2">
+				<div class="circle1"></div>
+				<div class="circle2"></div>
+				<div class="circle3"></div>
+				<div class="circle4"></div>
+			</div>
+			<div class="spinner-container container3">
+				<div class="circle1"></div>
+				<div class="circle2"></div>
+				<div class="circle3"></div>
+				<div class="circle4"></div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+export default {
+    props: {
+        show: Boolean,
+        fixed: [Boolean, undefined]
+    },
+    data() {
+        return {
+
+        }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+
+@import "../assets/css/base";
+
+.loading {
+    z-index: 10;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    .spinners {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -30px 0 0 -15px;
+    }
+
+    .container1 > div,
+    .container2 > div,
+    .container3 > div {
+        width: 6px;
+        height: 6px;
+        background-color: $main-color;
+        border-radius: 100%;
+        position: absolute;
+        -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+        animation: bouncedelay 1.2s infinite ease-in-out;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    .spinners .spinner-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container2 {
+        -webkit-transform: rotateZ(45deg);
+        transform: rotateZ(45deg);
+    }
+
+    .container3 {
+        -webkit-transform: rotateZ(90deg);
+        transform: rotateZ(90deg);
+    }
+
+    .circle1 {
+        top: 0;
+        left: 0;
+    }
+
+    .circle2 {
+        top: 0;
+        right: 0;
+    }
+
+    .circle3 {
+        right: 0;
+        bottom: 0;
+    }
+
+    .circle4 {
+        left: 0;
+        bottom: 0;
+    }
+
+    .container2 .circle1 {
+        -webkit-animation-delay: -1.1s;
+        animation-delay: -1.1s;
+    }
+
+    .container3 .circle1 {
+        -webkit-animation-delay: -1s;
+        animation-delay: -1s;
+    }
+
+    .container1 .circle2 {
+        -webkit-animation-delay: -.9s;
+        animation-delay: -.9s;
+    }
+
+    .container2 .circle2 {
+        -webkit-animation-delay: -.8s;
+        animation-delay: -.8s;
+    }
+
+    .container3 .circle2 {
+        -webkit-animation-delay: -.7s;
+        animation-delay: -.7s;
+    }
+
+    .container1 .circle3 {
+        -webkit-animation-delay: -.6s;
+        animation-delay: -.6s;
+    }
+
+    .container2 .circle3 {
+        -webkit-animation-delay: -.5s;
+        animation-delay: -.5s;
+    }
+
+    .container3 .circle3 {
+        -webkit-animation-delay: -.4s;
+        animation-delay: -.4s;
+    }
+
+    .container1 .circle4 {
+        -webkit-animation-delay: -.3s;
+        animation-delay: -.3s;
+    }
+
+    .container2 .circle4 {
+        -webkit-animation-delay: -.2s;
+        animation-delay: -.2s;
+    }
+
+    .container3 .circle4 {
+        -webkit-animation-delay: -.1s;
+        animation-delay: -.1s;
+    }
+
+    @-webkit-keyframes bouncedelay {
+        0%,
+        80%,
+        100% {
+            -webkit-transform: scale(0);
+        }
+
+        40% {
+            -webkit-transform: scale(1);
+        }
+    }
+
+    @keyframes bouncedelay {
+        0%,
+        80%,
+        100% {
+            transform: scale(0);
+            -webkit-transform: scale(0);
+        }
+
+        40% {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+    }
+
+}
+
+body > .loading {
+    position: fixed;
+    background: rgba(255, 255, 255, .6);
+}
+</style>

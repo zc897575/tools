@@ -1,0 +1,140 @@
+$bannerH: 150px;
+
+.banner {
+    @extend %contain;
+
+    height: $bannerH;
+    overflow: hidden;
+    position: relative;
+
+    .change {
+        width: 44px;
+        height: 72px;
+        background: rgba(255, 255, 255, .3);
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+        cursor: pointer;
+        transition: opacity .5s;
+        z-index: 2;
+
+        @include opcatiy(0);
+
+        i {
+            width: 18px;
+            height: 38px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -19px 0 0 -9px;
+        }
+
+        &:hover {
+            background: #999;
+        }
+    }
+
+    &:hover .change {
+        @include opcatiy(1);
+    }
+
+    > ul {
+        width: 100%;
+        height: inherit;
+
+        > li {
+            width: 100%;
+            height: $bannerH;
+            float: left;
+            position: relative;
+            overflow: hidden;
+
+            > img {
+                width: inherit;
+                max-width: 1920px;
+                height: inherit;
+            }
+
+            > a {
+                display: block;
+                width: 1920px;
+                text-align: center;
+                height: $bannerH;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -960px;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+            }
+        }
+    }
+
+    .prev {
+        left: 100px;
+
+        i {
+            background: #fff;
+        }
+    }
+
+    .next {
+        right: 100px;
+
+        i {
+            background: #fff;
+        }
+    }
+
+    .number {
+        width: 100%;
+        text-align: center;
+        font-size: 0;
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        z-index: 2;
+
+        span {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            background: #fff;
+            margin-left: 12px;
+            cursor: pointer;
+            border-radius: 10px;
+
+            @include opcatiy(.7);
+
+            position: relative;
+            transition: width .2s;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:hover {
+                @include opcatiy(1);
+            }
+
+            &.on {
+                width: 20px;
+                height: 8px;
+
+                @include opcatiy(1);
+            }
+        }
+    }
+}
+
+.banner-opacity {
+    > ul {
+        > li {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+

@@ -1,0 +1,83 @@
+/*
+网站中使用比较频繁的样式提取
+*/
+@import "variables";
+@import "minxin";
+
+a {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $jump-color;
+    }
+}
+
+/*
+ 布局
+*/
+.clearfix {
+    @include clearfix();
+}
+
+.full-left {
+    float: left;
+}
+
+.full-right {
+    float: right;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+@each $item in (10, 20, 30, 45) {
+    .mr-top#{$item} {
+        margin-top: #{$item}px !important;
+    }
+
+    .mr-left#{$item} {
+        margin-left: #{$item}px !important;
+    }
+}
+
+/* color */
+.light-color {
+    color: $light-color !important;
+}
+
+.point {
+    color: $main-color !important;
+}
+
+.warn {
+    color: #f00 !important;
+}
+
+%contain {
+    width: 100%;
+    min-width: $min-width;
+    margin: 0 auto;
+}
+
+.contain {
+    @extend %contain;
+}
+
+.empty {
+    width: 100%;
+    text-align: center;
+    font-size: $xxl-font;
+    line-height: 100px;
+    color: #666;
+    display: none;
+}

@@ -1,0 +1,37 @@
+{
+  "extends": ["eslint-config-ais"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "amd": true,
+    "es6":true,
+    "mocha":true
+  },
+  "plugins": [
+    "html"
+  ],
+  "globals": {
+    "JG": true,
+    "util": true,
+    "apis": true,
+    "dialog": true,
+    "pageTurn": true,
+    "wx": true
+  },
+  "rules": {
+    "max-len": "off", //最大长度限制
+    "indent": ["error", 4], //缩进
+    "semi": ["error", "never"], //禁用分号
+    "camelcase": "error", //要求使用骆驼拼写法
+    "no-extra-semi": "off", //多余的分号
+    "no-multi-str": "off", //字符串\结尾
+    "no-trailing-spaces": "off", //禁用行尾空白
+    "one-var": "off", //单行var声明
+    "no-nested-ternary": "off", //关闭 禁止使用嵌套的三元表达式
+    "no-script-url": "off", //关闭 禁止在链接地址中使用 javascript:
+    "import/no-dynamic-require": "off", //vue router 禁止动态require
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }] //禁止使用一元操作符 ++ 和 -- 除for循环
+  }
+}

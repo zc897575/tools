@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<title class="js-company">demo测试</title>
+<meta http-equiv="cache-control" content="no-cache,no-store, must-revalidate">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+<link rel="stylesheet" href="resource/css/all.css">
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+<div class="banner" id="banner">
+    <ul>
+        <li>
+            <a href="javascript:;" style="background: #000;"></a>
+        </li>
+        <li>
+            <a href="javascript:;" style="background: #f50;"></a>
+        </li>
+        <li>
+            <a href="javascript:;" style="background: #52b400;"></a>
+        </li>
+    </ul>
+    <span class="change prev"><i></i></span>
+    <span class="change next"><i></i></span>
+    <div class="number"></div>
+</div>
+
+<div class="banner banner-opacity" id="banner2">
+    <ul>
+        <li>
+            <a href="javascript:;" style="background: #000;"></a>
+        </li>
+        <li>
+            <a href="javascript:;" style="background: #f50;"></a>
+        </li>
+        <li>
+            <a href="javascript:;" style="background: #52b400;"></a>
+        </li>
+    </ul>
+    <span class="change prev"><i></i></span>
+    <span class="change next"><i></i></span>
+    <div class="number"></div>
+</div>
+
+<div class="loading-box" id="loading"></div>
+
+<div class="page" id="page"></div>
+
+<div class="page" id="page2"></div>
+
+
+<!-- build:js resource/js/common.pack.js -->
+<script src="resource/js/config.js"></script>
+<script src="resource/js/plugin/jquery.js"></script>
+<script src="resource/js/common/util.js"></script>
+<script src="resource/js/common/array.js"></script>
+<script src="resource/js/common/api.js"></script>
+<script src="resource/js/common/dialog.js"></script>
+<script src="resource/js/common/page-location.js"></script>
+<script src="resource/js/common/loading.js"></script>
+<!-- endbuild -->
+
+<script src="resource/js/common/page-turn.js"></script>
+<script src="resource/js/common/banner.js"></script>
+
+<script>
+$('#banner').banner({
+    width: '100%',
+    height: 150,
+})
+$('#banner2').bOpacity({
+    width: '100%',
+    height: 150,
+})
+
+window.TL.loadingIn('#loading')
+
+var page
+var totalPage = 20
+
+// 翻页方法1
+if (!page) {
+    page = new window.PageTurn('#page', {
+        currentPage: 1, // 当前页码
+        totalPage: totalPage, // 总页码
+        callback: function (number) { // 点击后回调事件
+            console.log(number)
+        },
+    })
+}
+if (totalPage != page.opts.totalPage) {
+    page.reload(1, totalPage)
+}
+
+// 翻页方法2
+$('#page2').pageTurn({
+    currentPage: 1, // 当前页码
+    totalPage: totalPage, // 总页码
+    callback: function (number) { // 点击后回调事件
+        console.log(number)
+    },
+}).pageTurn('reload', 1, 40)
+
+</script>
+</body>
+</html>

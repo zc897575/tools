@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>demo演示</title>
+<meta name="screen-orientation" content="portrait">
+<meta name="full-screen" content="yes">
+<meta name="browsermode" content="application">
+<meta name="x5-orientation" content="portrait">
+<meta name="x5-fullscreen" content="true">
+<meta name="x5-page-mode" content="app">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="x-rim-auto-match" content="none">
+<meta itemprop="name" content="demo演示">
+<meta itemprop="description" content="demo演示">
+<link rel="icon" href="static/img/favicon.png" type="image/x-png">
+<style>
+.spinner{width:30px;height:30px;background-color:#ff7200; position: absolute; left: 50%; top: 50%; margin: -30px 0 0 -15px;-webkit-animation:sk-rotateplane 1.6s infinite ease-in-out;animation:sk-rotateplane 1.6s infinite ease-in-out}
+@-webkit-keyframes sk-rotateplane{0%{-webkit-transform:perspective(120px)}
+	50%{-webkit-transform:perspective(120px) rotateY(180deg)}
+	100%{-webkit-transform:perspective(120px) rotateY(180deg) rotateX(180deg)}
+}
+@keyframes sk-rotateplane{0%{transform:perspective(120px) rotateX(0) rotateY(0);-webkit-transform:perspective(120px) rotateX(0) rotateY(0)}
+	50%{transform:perspective(120px) rotateX(-180.1deg) rotateY(0);-webkit-transform:perspective(120px) rotateX(-180.1deg) rotateY(0)}
+	100%{transform:perspective(120px) rotateX(-180deg) rotateY(-179.9deg);-webkit-transform:perspective(120px) rotateX(-180deg) rotateY(-179.9deg)}
+}
+.share{width: 0; height: 0;  overflow: hidden;}
+</style>
+</head>
+<body>
+<!--<div class="share"><img src="static/img/share.png"></div>-->
+<div id="app-box"></div>
+<div class="spinner" id="app-loading"></div>
+<script>
+(function(window,document){function setFontSize(){var designWidth=750,rem2px=100,div=window.document.createElement("div"),docEle=document.documentElement,body=document.body;div.style.width="1rem";div.style.display="none";body.appendChild(div);var defaultFontSize=body.fontSizes||parseFloat(window.getComputedStyle(div,null).getPropertyValue("width")),winW=Math.min((docEle.getBoundingClientRect().width||window.innerWidth),450);body.fontSizes=defaultFontSize;docEle.style.fontSize=winW/designWidth*rem2px/defaultFontSize*100+"%";document.body.removeChild(div)}var resize="onorientationchange" in window?"orientationchange":"resize";var timer=null;window.addEventListener(resize,function(){clearTimeout(timer);timer=setTimeout(setFontSize,300)},false);setFontSize()}(window,document));
+(function (window, document) {window.addEventListener('load', function () {document.body.removeChild(document.getElementById('app-loading'))}, false)}(window, document));
+</script>
+<%=htmlWebpackPlugin.files.webpackManifest%>
+<script src="static/js/babel.<%= htmlWebpackPlugin.options.suffix %>.js?v=1"></script>
+<script src="static/js/vendor.<%= htmlWebpackPlugin.options.suffix %>.js?v=1"></script>
+<!--<script src="static/js/jweixin-1.2.0.js"></script>-->
+</body>
+</html>

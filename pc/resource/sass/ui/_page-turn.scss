@@ -1,0 +1,120 @@
+.page-turn {
+    font-size: 0;
+    clear: both;
+    color: #666;
+    text-align: center;
+
+    * {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 14px;
+    }
+
+    a {
+        height: 32px;
+        line-height: 32px;
+        text-decoration: none;
+        color: #7f7f7f;
+    }
+
+    a,
+    span {
+        margin: 0 4px 8px;
+        padding: 0 12px;
+    }
+
+    span {
+        height: 32px;
+        line-height: 32px;
+    }
+
+    input,
+    button {
+        border: 1px solid #d5d5d5;
+        background-color: #f2f2f2;
+    }
+
+    .disabled {
+        color: #bfbfbf;
+        border-color: #d2d2d2 !important;
+    }
+
+    input {
+        width: 46px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    button {
+        height: 32px;
+        line-height: 32px;
+        margin-left: 5px;
+        padding: 0 10px;
+        color: #666;
+        cursor: pointer;
+    }
+
+    .prev,
+    .next {
+        width: 36px;
+    }
+
+    .prev i,
+    .next i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -5px 0 0 -1px;
+    }
+
+    .prev i {
+        @include triangle(left, 5px, #999);
+    }
+
+    .next i {
+        @include triangle(right, 5px, #999);
+    }
+
+    .prev:hover i {
+        border-right-color: $main-color;
+    }
+
+    .next:hover i {
+        border-left-color: $main-color;
+    }
+}
+
+.pink-page {
+    a {
+        border: 1px solid #d5d5d5;
+    }
+
+    input {
+        background-color: #fff;
+    }
+
+    a,
+    span,
+    input,
+    button {
+        border-radius: 2px;
+        position: relative;
+    }
+
+    .on {
+        background-color: $main-color;
+        border-color: $main-color;
+        color: #fff;
+    }
+
+    input:focus {
+        border-color: #999;
+    }
+
+    a:hover,
+    button:hover {
+        border-color: $main-color;
+        color: $main-color;
+    }
+}

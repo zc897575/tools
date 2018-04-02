@@ -1,0 +1,33 @@
+$version:                   201606121 !default;
+
+/* bg color */
+$body-bg: #f5f5f5 !default;
+
+/* font-family */
+$font-family: -apple-system-font, "Helvetica Neue", sans-serif, 'Microsoft YaHei';
+
+/* button */
+$btn-hover: #ff881e !default; // 按钮聚焦时颜色
+
+/* color */
+$main-color: #eaa73f !default; // 网站主色调
+$jump-color: #f50 !default; // 网站点缀颜色
+$text-color: #333 !default; // 正文颜色
+$light-color: #999 !default; // 提示文字颜色
+$line-color: #eee !default; // 分割线颜色
+
+/* font-size (列表中没有的字体说明设计不规范，不用加入此列表) */
+$xxs-font: .22rem !default;
+$xs-font: .24rem !default;
+$s-font: .26rem !default;
+$m-font: .28rem !default; // 正文字体
+$l-font: .3rem !default;
+$xl-font: .32rem !default;
+$xxl-font: .34rem !default;
+$xxxl-font: .36rem !default;
+$xxxxl-font: .4rem !default;
+
+/* layout */
+$min-width: 320px !default; // 页面最小宽度
+$max-width: 750px !default; // 页面最大宽度
+
